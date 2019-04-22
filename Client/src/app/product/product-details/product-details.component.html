@@ -1,0 +1,60 @@
+<div class="container">
+        <br>
+    <div class="card border-0">
+        <div class="row">
+            <aside class="col-sm-4">
+    <article class="gallery-wrap"> 
+    <div class="img-big-wrap">
+      <div> <a href="#"><img src="{{product.image}}"></a></div>
+    </div>
+    
+    </article>
+            </aside>
+            <aside class="col-sm-5">
+    <article class="card-body m-0 pt-0 pl-5">
+        <h3 class="title text-uppercase">{{product.itemName}}</h3>
+    
+    <div class="mb-3 mt-3"> 
+            <span class="h7 text-success">Active offer</span>
+    </div>						
+    <div class="mb-3 mt-3"> 
+        <span class="price-title">Price :</span>
+            <span class="price color-price-waanbii">{{product.price}}<sup>€</sup></span>
+    </div>
+    <dl class="item-property">
+      <dt>Description</dt>
+      <dd><p>{{product.description}} </p></dd>
+    </dl>
+    <dl class="param param-feature">
+      <dt>Contact Number:</dt>
+      <dd>{{product.contactNumber}}</dd>
+    </dl>
+    </article>
+            </aside>
+            <aside class="col-sm-3">
+                    
+            <div class="row ">
+        <button (click)="deleteProduct(id)" *ngIf="isAdmin() === 'true'" class="btn btn-lg color-box-waanbii" type="button"> <i class="fa fa-trash"></i>Delete</button>
+        </div>
+                <div class="row mb-4 mt-4">
+        <button [routerLink]="['/product/edit', id]" *ngIf="isAdmin() === 'true'" class="btn btn-lg color-box-waanbii" type="button"> <i class="fa fa-folder"></i>Edit</button>
+        </div>
+    <hr class="m-0 p-0">
+        <div class="row mb-4 mt-4">
+        To remove/edit an offer please send us an email!
+                </div>
+            </aside>
+        </div>
+    </div>
+    
+    
+    </div>
+
+
+
+
+
+
+
+
+

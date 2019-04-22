@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row space-top">
+        <div class="col-md-12">
+            <h1 class="display-4 font-weight-normal">All Offers</h1>
+            <p>Select product from the catalog to view details.</p>
+        </div>
+    </div>
+    <div class="row space-top" *ngIf="product$;else loading">
+        <div class="col-md-4" *ngFor="let f of product$ | async">
+            <div class="card-content">
+                <div class="card-img">
+                    <img src="{{f.image}}" alt="">
+                    <span>
+                        <h4>{{f.location}}</h4>
+                    </span>
+                </div>
+                <div class="card-desc">
+                    <h3>{{f.itemName}}</h3>
+                    <p>{{f.description | slice:0:230}}...</p>
+                    <a [routerLink]="['/product/details', f._id]" class="btn-card">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #loading>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 text-center">
+                <h1>Loading</h1>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </ng-template>
+</div>

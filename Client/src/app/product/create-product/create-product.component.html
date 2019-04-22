@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row space-top">
+    <div class="col-md-12">
+      <h1 class="display-4 font-weight-normal">List a new offer</h1>
+      <p>Please fill all fields.</p>
+    </div>
+  </div>
+  <form [formGroup]="form" (submit)="createProduct()">
+    <div class="row space-top">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label class="form-control-label" for="new-itemName">Item Name</label>
+          <input formControlName="itemName" class="form-control" id="new-itemName" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.itemName.errors?.required && f.itemName.touched">
+          This field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="f.itemName.errors?.minlength ">
+          Length must be atleast {{f.itemName.errors.minlength.requiredLength}} chars
+        </div>
+        <div class="form-group has-success">
+          <label class="form-control-label" for="new-location">Location</label>
+          <input formControlName="location" class="form-control is-valid" id="new-location" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.location.errors?.minlength ">
+          Length must be atleast {{f.location.errors.minlength.requiredLength}} chars
+        </div>
+        <div class="alert alert-danger" *ngIf="f.location.errors?.required && f.location.touched">
+          This field is required.
+        </div>
+        <div class="form-group has-success">
+          <label class="form-control-label" for="new-contactNumber">Contact Number</label>
+          <input formControlName="contactNumber" class="form-control is-valid" id="new-contactNumber" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.contactNumber.errors?.minlength ">
+          Length must be atleast {{f.contactNumber.errors.minlength.requiredLength}} chars
+        </div>
+        <div class="alert alert-danger" *ngIf="f.contactNumber.errors?.required && f.contactNumber.touched">
+          This field is required.
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="new-description">Description</label>
+          <input formControlName="description" class="form-control" id="new-description" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.description.errors?.required && f.description.touched">
+          This field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="f.description.errors?.minlength ">
+          Length must be atleast {{f.description.errors.minlength.requiredLength}} chars
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="new-price">Price</label>
+          <input formControlName="price" class="form-control" id="new-price" type="number">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.price.errors?.required && f.price.touched">
+          This field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="f.price.errors?.min">
+          Min value must {{f.price.errors.min.min}}
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="new-image">Image</label>
+          <input formControlName="image" class="form-control" id="new-image" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="f.image.errors?.required && f.image.touched">
+          This field is required.
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="invalid">Create</button>
+      </div>
+    </div>
+  </form>
+</div>
