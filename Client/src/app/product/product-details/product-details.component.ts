@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from 'src/app/product.service';
+import { ProductService } from '../product.service';
 import { Product } from 'src/app/models/product';
-import { resolveDirective } from '@angular/core/src/render3/instructions';
 import { Router } from '@angular/router';
 
 @Component({

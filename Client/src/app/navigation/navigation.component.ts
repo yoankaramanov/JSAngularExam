@@ -8,7 +8,7 @@ import { AuthService } from '../authentication/auth.service';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  isAdmin: string
+  
   username:string
   constructor(
     public authService: AuthService,

@@ -8,7 +8,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
-import { DropdownDirective } from './navigation/dropdown.directive';
+
 import { CollapseDirective } from './navigation/collapse.directive';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +26,6 @@ import { ResponseHandlerService } from './response-handler.service';
     SigninComponent,
     SignupComponent,
     HomeComponent,
-    DropdownDirective,
     CollapseDirective,
   ],
   imports: [
